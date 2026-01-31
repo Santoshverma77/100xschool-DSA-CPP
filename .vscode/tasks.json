@@ -1,6 +1,25 @@
 {
     "tasks": [
         {
+            "type": "shell",
+            "label": "C/C++: g++ build active file (Windows console)",
+            "command": "g++",
+            "args": [
+                "-mconsole",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "Use -mconsole so linker expects main(), not WinMain.",
+            "presentation": { "reveal": "silent" }
+        },
+        {
             "type": "cppbuild",
             "label": "C/C++: clang build active file",
             "command": "/usr/bin/clang",
